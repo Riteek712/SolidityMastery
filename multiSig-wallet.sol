@@ -1,5 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
+
+/*
+The wallet owners can
+    -> submit a transaction
+    -> approve and revoke approval of pending transcations
+    -> anyone can execute a transcation after enough owners has approved it.
+*/
 contract MultiSigWallet {
     event Deposit(address indexed sender, uint amount, uint balance);
     event SubmitTransaction(
