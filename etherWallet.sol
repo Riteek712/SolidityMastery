@@ -12,10 +12,13 @@ contract EtherWallet {
 
     function withdraw(uint _amount) external {
         require(msg.sender == owner, "caller is not owner");
+        // This is to check that only the contract owner can withdraw funds from the contract.
         payable(msg.sender).transfer(_amount);
+        // This is to transfer the specified amount to the owner's address.
     }
 
     function getBalance() external view returns (uint) {
+        // To check the funds in the Account.
         return address(this).balance;
     }
 }
